@@ -1,5 +1,23 @@
 """
 Policy topic analysis for FOMC meetings.
+
+This module implements LASSO regression to identify policy-relevant topics from FOMC meetings.
+The analysis works as follows:
+
+1. Dependent Variable:
+   - Binary indicator for voting decisions (1 for dissent, 0 for agreement)
+
+2. Independent Variables:
+   - Topic distributions over 15 LDA-selected topics
+   - Control variables: contemporaneous unemployment rate and CPI
+
+3. Methodology:
+   - Applies LASSO regression with 100 iterations
+   - Topics with non-zero coefficients in >50% of runs are considered informative
+   - Analysis performed separately for FOMC1 and FOMC2 sections
+   - Topics selected in both sections are identified as policy-relevant
+
+The identified policy topics are used for subsequent influence analysis between FOMC members.
 """
 
 import pandas as pd

@@ -1,41 +1,22 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual Environment
-venv/
-ENV/
-
-# IDEs
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OS
+# macOS-specific files
 .DS_Store
-Thumbs.db
+.AppleDouble
+.Trashes
 
-# Project-specific
-models/
-*.csv
-*.txt
-!requirements.txt 
+# Python-specific files
+*.pyc
+__pycache__/
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+*.egg
+venv/
+# Ignore data files
+input/*
+output/*
+!input/.gitkeep
+!output/.gitkeep
+!output/models/.gitkeep

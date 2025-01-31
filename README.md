@@ -2,20 +2,31 @@
 
 This project analyzes Federal Open Market Committee (FOMC) meeting transcripts using topic modeling and measures the influence between speakers. Following Hansen et al. (2018), influence is calculated as the similarity between the topic distribution of each committee member's speeches and those of the rest of the committee at each FOMC meeting.
 
+Data is not included in this repository.
+
 ## Project Structure
 
 ```
 .
+├── input/                   # Input data directory
+│   ├── speaker_speech.csv   # Meeting speeches data
+│   └── controls.csv         # Speaker backgrounds & economic indicators
+├── output/                  # Output data directory
+│   ├── topic_description.csv
+│   ├── agg_topic_output.csv
+│   ├── within_meeting_influence_full.csv
+│   └── models/             # Trained models directory
+│       └── lda_model       # Saved topic model
 ├── src/
-│   ├── __init__.py          # Package initialization
-│   ├── main.py              # Main entry point
-│   ├── topic_modeling.py    # Topic modeling training
+│   ├── __init__.py
+│   ├── main.py               # Main entry point
+│   ├── topic_modeling.py     # Topic modeling training
 │   ├── influence_analysis.py # Influence pattern analysis
-│   ├── policy_analysis.py   # Policy topic analysis
-│   ├── visualization.py     # Visualization utilities
-│   └── utils.py            # Common utilities
-├── requirements.txt         # Project dependencies
-└── README.md               # Project documentation
+│   ├── policy_analysis.py    # Policy topic analysis
+│   ├── visualization.py      # Visualization utilities
+│   └── utils.py              # Common utilities
+├── requirements.txt          # Project dependencies
+└── README.md                 # Project documentation
 ```
 
 ## Installation
@@ -26,7 +37,7 @@ This project analyzes Federal Open Market Committee (FOMC) meeting transcripts u
 pip install -r requirements.txt
 ```
 
-## Input Files
+## Input Files (place in input/ directory)
 
 1. `speaker_speech.csv`: Contains FOMC meeting speeches with columns:
    - Date: Meeting date (YYYYMMDD format)
@@ -40,7 +51,7 @@ pip install -r requirements.txt
    - Status: Speaker status
    - Additional economic indicators (CPI, Unemployment, etc.)
 
-## Output Files
+## Output Files (generated in output/ directory)
 
 1. `topic_description.csv`: Describes the selected topics and their composition
    - Contains topic words and their probabilities

@@ -6,7 +6,7 @@ is measured as the similarity between the policy topic coverage of the individua
 the economic outlook discussion (FOMC1) and the policy topic coverage of all committee members’ speeches 
 during the monetary policy decision discussion (FOMC2) of the same meeting.
 
-Three established approaches from the literature are usedas proxies for the similarity:
+Three established approaches from the literature are used as proxies for the similarity:
 1. Bhattacharyya coefficient
 2. Dot product
 3. Kullback-Leibler divergence
